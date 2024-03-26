@@ -46,10 +46,3 @@ e
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
 
-
-Scanner sc = new Scanner(System.in);
-       String a = sc.next();
-        
-        for(char ch : a.toCharArray()){
-        	System.out.println(ch);
-        }
