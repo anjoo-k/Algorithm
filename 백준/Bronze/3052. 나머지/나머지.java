@@ -8,29 +8,29 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int[] num = new int[43];
-		for(int i = 0; i < 43; i++) {
-			if(i < 10) {
-				num[i] = sc.nextInt() % 42;
-				sc.nextLine();
-			} else {
-				num[i] = -1;
-			}
-		}
-
-		boolean[] remainder = new boolean[43];
-		for(int i = 0; i < 43; i++) {
-
-			remainder[num[i] + 1] = true;
+		int[] nNumbers = new int [10];
+		int[] remainders = new int [10];
+		
+		
+		
+		for(int i = 0; i < 10; i++) {
+			nNumbers[i] = sc.nextInt();
+			remainders[i] = nNumbers[i] % 42;
 		}
 		
 		int count = 0;
-		for(int i = 0; i < 43; i++) {
-			if(remainder[i]) {
-				 count++;
-			}
-		}
 		
-		System.out.println(count - 1);
+		for(int i = 0; i < nNumbers.length; i++) {
+			boolean compare = true;
+			for(int j = 0; j < i; j++) { // 자기 자신과의 비교
+				if(remainders[i] == remainders[j]) {
+					compare = false;
+					break;
+				}
+			}
+			
+			if(compare) count++;
+		}
+		System.out.println(count);		
 	}
 }
