@@ -1,36 +1,24 @@
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int[] nNumbers = new int [10];
-		int[] remainders = new int [10];
+		int[] a = new int[10];
+		Set set = new HashSet();
 		
-		
-		
-		for(int i = 0; i < 10; i++) {
-			nNumbers[i] = sc.nextInt();
-			remainders[i] = nNumbers[i] % 42;
+		for(int i = 0; i < a.length; i++) {
+			a[i] = sc.nextInt();
 		}
 		
-		int count = 0;
-		
-		for(int i = 0; i < nNumbers.length; i++) {
-			boolean compare = true;
-			for(int j = 0; j < i; j++) { // 자기 자신과의 비교
-				if(remainders[i] == remainders[j]) {
-					compare = false;
-					break;
-				}
-			}
-			
-			if(compare) count++;
+		for(int i = 0; i < a.length; i++) {
+			int b = a[i] % 42;
+			set.add(b);
 		}
-		System.out.println(count);		
+		
+		System.out.println(set.size());
 	}
 }
