@@ -25,7 +25,7 @@ public class Main {
                 sb.append(" ");
         }
         
-        String[] split = sb.toString().trim().split("\\s+");
+        String[] split = sb.toString().trim().split(" ");
         
         long result = 0;
         for (String s : split) {
